@@ -1,0 +1,81 @@
+
+html{
+    font-size: 30px;
+}
+body{
+    /* 使页面占浏览器总高 */
+    height: 100vh;
+    /* 弹性布局 使页面元素垂直+水平居中 */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* 背景色 */
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    /* 字体样式 */
+    font-family: '方正锐正圆 简 M';
+
+}
+
+.card-container{
+    width: 300px;
+    height: 400px;
+    /* 相对定位 */
+    position: relative;
+    /* 透视效果 */
+    perspective: 1000px;
+}
+
+.cover, .back{
+    /* 大小占容器的100% */
+    width: 100%;
+    height: 100%;
+    /* 绝对定位 */
+    position: absolute;
+    /* 背面不可见 */
+    backface-visibility: hidden;
+    /* 过渡效果 */
+    transition: transform .3s ease-in-out;
+    /* 弹性布局 */
+    display: flex;
+    /* 水平居中 */
+    justify-content: center;
+    /* 重置居中 */
+    align-items: center;
+    /* 圆角属性 */
+    border-radius: .6rem;
+    /* 盒子阴影 */
+    box-shadow: 0 .4rem .5rem rgba(0, 0, 0, .2);
+    /* 字体大小 */
+    font-size: 2rem;
+    /* 字体颜色 */
+    color: #fff;
+    /* 字体阴影 */
+    text-shadow: 0 .2rem .2rem rgba(0, 0, 0, .5);
+}
+
+.cover{
+    /* 卡片正面颜色 */
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    /* 定义沿着 Y 轴的 3D 旋转 */
+    transform: rotateY(0deg);
+}
+
+.card-container:hover .cover{
+    /* 当鼠标在容器上时 卡片正面旋转 */
+    transform: rotateY(180deg);
+}
+
+.back{
+    /* 卡片背面颜色 */
+    background-color: #FF9A8B;
+    background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+    /* 反面卡片先-180度 */
+    transform: rotateY(-180deg);
+}
+
+.card-container:hover .back{
+    /* 反面卡片回正 */
+    transform: rotateY(0deg);
+}
